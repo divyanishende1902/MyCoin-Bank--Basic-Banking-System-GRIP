@@ -1,0 +1,131 @@
+<!--  <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction History</title>
+</head>
+<body>
+    <h1>Transaction History</h1>
+    
+    <table>
+        <tr>
+            <th>Transaction ID</th>
+            <th>Sender ID</th>
+            <th>Receiver ID</th>
+            <th>Amount</th>
+    <tr th:each="transfer : ${transfers}">
+    <td th:text="${transfer.transactionId}"></td>
+    <td th:text="${transfer.senderId}"></td>
+    <td th:text="${transfer.receiverId}"></td>
+    <td th:text="${transfer.amount}"></td>
+</tr>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction History</title>
+    
+     
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="MyCoinBank.css">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Style the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style table headers */
+        th {
+            background-color: #e1f0fa;
+            text-align: left;
+            padding: 8px;
+        }
+
+        /* Style table rows */
+        tr:nth-child(even) {
+            background-color: #e1f0fa;
+        }
+
+        /* Style table cells */
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+
+</head>
+<body>
+
+        <!-- navbar -->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MyCoin Bank</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/transfers/transfer}">Transfer Money</a>
+              </li>
+             <!--  <li class="nav-item">
+                <a class="nav-link" th:href="@{/transfers/customers/{customerId}/transactions(customerId=${customer.id})}">Transaction History</a>
+              </li> --> 
+            
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/customers}">Customers List</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" th:href="@{/index}">Home</a>
+              </li>
+       
+        </div>
+      </nav>
+
+<!-- ***************************************************************************** -->
+    <h1>Transaction History List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="transaction : ${transactions}">
+                <td th:text="${transaction.date}"></td>
+                <td th:text="${transaction.sender.name}"></td>
+                <td th:text="${transaction.receiver.name}"></td>
+                <td th:text="${transaction.amount}"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <footer style="background-color:#4b81ad; padding: 10px; text-align: center;">
+    <span>&copy; 2023 Copyright:</span>
+    <a class="text-reset fw-bold" href="https://www.linkedin.com/in/divyani-shende" style="color: #333; text-decoration: none;">Divyani Shende</a>
+    
+</footer>
+
+   <!--   <a th:href="@{/customers}">Back to Customer List</a>-->
+</body>
+</html>
+

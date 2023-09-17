@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  <link rel="stylesheet" href="MyCoinBank.css">-->
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   <!-- **************************************************************8  -->
+   
+   <style>
+  
+   
+        /* Style the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style table headers */
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+            padding: 8px;
+        }
+
+        /* Style table rows */
+        tr:nth-child(even) {
+            background-color: #e1f0fa;
+        }
+
+        /* Style table cells */
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+    
+</head>
+<body>
+
+<!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MyCoin Bank</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/index}">Back to Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/customers}">Updated List</a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+        <!--*************************************************************************************** -->
+    <h1>Customers List</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Balance</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.email}"></td>
+            <td th:text="${customer.balance}"></td>
+            <td>
+                <a th:href="@{/customers/{id}(id=${customer.id})}">View Details</a>
+                <!-- <a th:href="@{/customers/{id}}">View Customer by ID (replace '1' with actual ID)</a>-->
+                
+            </td>
+        </tr>
+    </table>
+    <a th:href="@{/index}">Back to Home</a>
+</body>
+</html>

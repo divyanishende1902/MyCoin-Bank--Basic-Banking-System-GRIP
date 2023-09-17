@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Customer</title>
+</head>
+<body>
+    <!-- Define the fragment -->
+    <div th:fragment="search-form">
+        <h1>Search Customer</h1>
+        
+        <form th:action="@{/customers/{id}" method="get">
+            <label for="customerId">Enter Customer ID:</label>
+            <input type="text" id="customerId" name="customerId" required>
+            <button type="submit">Search</button>
+        </form>
+        
+        
+        
+    </div>
+    
+    <!-- Display customer details here -->
+    <!-- ... (the rest of your HTML) ... -->
+</body>
+</html>
