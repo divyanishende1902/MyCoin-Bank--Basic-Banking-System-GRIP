@@ -12,6 +12,7 @@ View Layer :- HTML, CSS, Thymeleaf
 Model layer :- Java (Spring Boot, Hibernate JPA)
 Spring MVC 
 DB: MySql Workbench
+IDE: Eclipse
 
 Project Snapshots:
 
