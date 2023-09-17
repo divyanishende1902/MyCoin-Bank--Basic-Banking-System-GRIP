@@ -26,11 +26,23 @@ Home Pages:
 
 ![Screenshot (39)](https://github.com/divyanishende1902/MyCoin-Bank--Basic-Banking-System-GRIP/assets/141179340/1a6c0df0-39d1-43eb-a383-33652a278e50)
 
+Customers List:
+
+
 ![Screenshot (35)](https://github.com/divyanishende1902/MyCoin-Bank--Basic-Banking-System-GRIP/assets/141179340/f0f5e653-f5d7-4b40-be7a-7ded8462bc1c)
+
+Transaction Form:
+
+
 
 ![Screenshot (36)](https://github.com/divyanishende1902/MyCoin-Bank--Basic-Banking-System-GRIP/assets/141179340/e42af1b7-b542-4516-875f-c758034062ca)
 
+Details of particular Customer:
+
 ![Screenshot (37)](https://github.com/divyanishende1902/MyCoin-Bank--Basic-Banking-System-GRIP/assets/141179340/512a8772-243a-4833-89ee-89cf061aa72f)
+
+Transaction History of particular Customer:
+
 
 ![Screenshot (38)](https://github.com/divyanishende1902/MyCoin-Bank--Basic-Banking-System-GRIP/assets/141179340/2ccce0da-bf57-464c-9663-138e68bfd675)
 
